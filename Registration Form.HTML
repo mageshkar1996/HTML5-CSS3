@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+<style>
+#tab table,th,td
+{
+width: 250px;
+height: 60px;
+text-align: center;
+}
+#tab2
+{
+width: 600px;
+height: 500px;
+background-color: burlywood;
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+}
+body
+{
+display: flex;
+justify-content: center;
+align-items: center;
+width:100%;
+height:600px;
+background-color: rgb(63, 71, 71);
+
+}
+</style>
+</head>
+<body>
+    <div id="tab2">
+    <div style="width:500px;background-color: turquoise;">
+        <h1 style="text-align: center;text-decoration-line: underline;">Registration Form</h1>
+    <table id="tab">
+        <tr>
+            <td>
+                <label for="">First Name</label>
+            </td>
+            <td >
+                <input type="text" value="mohan">
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <label for="">Last Name</label>
+            </td>
+            <td>
+                <input type="text"  pattern="[A-Za-z]"value="kumar">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">Place</label>
+            </td>
+            <td>
+                <input type="text" value="chennai">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">Phone Number<label>
+            </td>
+            <td>
+                <input type="text" value="987654123">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">Date of Birth</label>
+            </td>
+            <td>
+                <input type="date" value="15/08/1996">
+            </td>
+            <tr>
+            <td>
+                <label for=""></label>
+            </td>
+            <td>
+                <button type="submit" onclick="fun()">submit</button>
+            </td>
+        </tr>
+        </tr>
+        
+    </table>
+    </div>
+</div>
+   
+    
+   <script>
+       function fun()
+       {
+alert("please check these details")
+       }
+   </script> 
+
+</body>
+</html>
