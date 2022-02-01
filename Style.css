@@ -1,0 +1,25 @@
+body
+{
+
+    background-color: rgb(111, 211, 241);
+}
+#heading
+{
+    color: cadetblue;
+    background-color: rgb(27, 40, 65);
+    font: size 20px;
+    text-align: center;
+    text-transform: capitalize;    
+}
+#tab th,td
+{
+    border: 2px solid red;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: salmon;
+    
+}
+#tab1 
+{
+background-color: seashell;
+}

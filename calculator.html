@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <title>Simple Project</title>
+</head>
+<body>
+    <h1 id="heading">Project Name</h1>
+    
+    <button type="button" onclick="check()">check me</button>
+
+<script>
+    function check()
+{
+document.getElementById("heading").innerHTML="calculator"
+}
+function cl()
+{
+  document.getElementById("res").value=""
+}
+function myfunction(input)
+{
+  document.getElementById("res").value +=input
+}
+function cal()
+{
+    var output=eval(document.getElementById("res").value)
+    document.getElementById("res").value=output;
+}
+</script>
+<table id="tab" style="width: 40%;">
+    <caption><h4>calculator</h4></caption>
+    <tr>
+        <td colspan=3 style="background-color: white;color: black;" ><input type="text" id="res" style="width: 450px;"></td>
+        <td><button type="button" onclick="cl()">clear</button></td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="myfunction('1')">1</button></td>
+        <td><button type="button" onclick="myfunction('2')">2</button></td>
+        <td><button type="button" onclick="myfunction('3')">3</button></td>
+        <td><button type="button" onclick="myfunction('+')">+</button></td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="myfunction('4')">4</button></td>
+        <td><button type="button" onclick="myfunction('5')">5</button></td>
+        <td><button type="button" onclick="myfunction('6')">6</button></td>
+        <td><button type="button" onclick="myfunction('-')">-</button></td>
+    </tr>
+    <tr>
+        <td><button type="button" onclick="myfunction('7')">7</button></td>
+        <td><button type="button" onclick="myfunction('8')">8</button></td>
+        <td><button type="button" onclick="myfunction('9')">9</button></td>
+        <td><button type="button" onclick="myfunction('*')">*</button></td>
+    </tr>
+    <tr>
+    
+        <td><button type="button" onclick="myfunction('.')">.</button></td>
+        <td><button type="button" onclick="myfunction('0')">0</button></td>
+        <td><button type="button" onclick="cal()">=</button></td>
+        <td><button type="button" onclick="myfunction('/')">/</button></td>
+    </tr>
+        
+</table>
+</div>
+
+</body>
+</html>
