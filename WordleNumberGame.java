@@ -31,7 +31,7 @@ public class WordleNumberGame
 		count=0;
 		int input=wordle();
 		int Developer=inter[randnum];
-		System.out.println(Developer);
+		//System.out.println(Developer);
 		int counting=countofnumber(input);
 		int [] arrayform=tomakeasarrayform(input,counting);
 		for(int i=arrayform.length-1;i>=0;i--) 
