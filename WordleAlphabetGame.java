@@ -30,7 +30,7 @@ public class WordleAlphabetGame
 			String[] words= {"task","hunt","road","fear","film","read","play","bank","toys","save"};
 			int randnum=(int) (Math.random()*10);
 			String Developer=words[randnum];
-			System.out.println(Developer);
+			//System.out.println(Developer);
 			int count=0;
 			do 
 			{
