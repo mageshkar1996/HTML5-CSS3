@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+<style>
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.center
+{
+    display: flex;justify-content: center;align-items: center;
+}
+body
+{
+    background-color: antiquewhite;
+}
+
+</style>
+    
+</head>
+<body>
+    <h1 style="text-align:center;">திருக்குறள் </h1>
+    <div class="center" >
+    <div><img src="https://images.news18.com/ibnlive/uploads/2022/01/thiruvalluvar.jpg" alt="noimage" style="height:400px;width:500px;"></div>
+    <br><br>
+</div>
+    <div class="center">
+    <input type="text"  style="height:40px;width:200px;" id="code" placeholder="குறள் எண்" autofocus required autocomplete="off">
+    <button onclick="inputGet()" class="button">Get the Kural</button>
+    </div>
+    <div id="myDIV">
+        <h3 id="result1"></h3>
+        <h3 id="result2"></h3>
+        <h3 id="result3"></h3>
+        <h3 id="ans"></h3>
+        <h3 id="result4"></h3>
+        <h3 id="result5"></h3>
+        <h3 id="result6"></h3>      
+    </div>
+   
+    <script>
+function inputGet()
+{
+var num=document.getElementById("code").value;
+console.log(num);
+checknum=parseInt(num);
+if (checknum<=1330)
+{
+const url="https://api-thirukkural.vercel.app/api?num="+num;
+fetch(url).then(
+    (response)=>{
+return response.json();
+}
+).then((parsedData)=>{
+
+document.getElementById("result3").innerHTML="குறள்:"+"<br />"+parsedData.line1+"<br />"+parsedData.line2;
+document.getElementById("result2").innerHTML=parsedData.chap_tam;
+document.getElementById("result1").innerHTML=parsedData.sect_tam;
+document.getElementById("ans").innerHTML="பொருள் விளக்கம்:";
+document.getElementById("result4").innerHTML=parsedData.tam_exp+"<hr />";
+document.getElementById("result5").innerHTML=parsedData.eng;
+document.getElementById("result6").innerHTML=parsedData.eng_exp;
+})
+}
+else{
+document.getElementById("result3").innerHTML="Please Provide proper Num less than 1330";
+document.getElementById("result2").innerHTML="";
+document.getElementById("result1").innerHTML="";
+document.getElementById("ans").innerHTML="";
+document.getElementById("result4").innerHTML="";
+document.getElementById("result5").innerHTML="";
+document.getElementById("result6").innerHTML="";
+}
+}
+    </script>
+</body>
+</html>
