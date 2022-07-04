@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+
+
+        body
+        {
+            margin: 0px;
+            padding: 0px;
+            background-color: rgb(209, 203, 195);
+        }
+        .maincontainer
+        {
+            background-color: rgb(235, 247, 247);
+            height: 400px;
+            width: 800px;
+            transform-origin: -50%,-50%;
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            text-align: center;
+        }
+        .button
+        {
+        
+            padding:10px 10px;
+            font-size: 20px;
+            background-color: rgb(117, 214, 117);
+            color:white;
+        }
+        #result
+        {
+            font-size:70px;
+            font: bold;   
+        }
+        </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Time-calculation</title>
+
+ 
+</head>
+<body>
+    <div class="maincontainer">
+        <h1>Time-calculation</h1>
+<p id="result">00:00:00</p>
+<button class="button" onclick="starttimer()">Check-in</button>
+<button class="button" onclick="stoptimer()" >Check-out</button>
+<button class="button" onclick="resettime()" >Reset</button>
+    </div>
+</body>
+<script>
+const res=document.getElementById("result");
+var sec=0;
+var hr=0;
+var min=0;
+var stopwatch=true;
+
+function starttimer()
+{
+    if (stopwatch==true)
+    {
+        stopwatch=false;
+        timer();
+    }
+
+}
+function stoptimer()
+{
+    if (stopwatch==false)
+    {
+        stopwatch=true;
+    }
+}
+
+function timer()
+{
+    if (stopwatch==false)
+    {
+        console.log("happy time");
+        sec=parseInt(sec);
+        hr =parseInt(hr);
+        min=parseInt(min);
+        sec=sec+1;
+
+        if (sec==60)
+        {
+            min=min+1;
+            sec=0;
+        }
+        if (min==60)
+        {
+            hr=hr+1;
+            min =0;
+            sec=0;
+        }
+        if (sec<10)
+        {
+            sec='0'+sec;
+        }
+        if (min<10)
+        {
+            min="0"+min;
+        }
+        if (hr<10)
+        {
+            hr='0'+hr;
+        }
+        res.innerHTML=hr+":"+min+":"+sec;
+        setTimeout("timer()",1000);
+    }
+}
+function resettime()
+{
+    res.innerHTML="00:00:00";
+    stopwatch=true;
+    sec=0;
+ hr=0;
+ min=0;
+
+}
+</script>
+</html>
