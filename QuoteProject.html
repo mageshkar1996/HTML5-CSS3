@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project</title>
+<style>
+    *{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    }
+body
+{
+    background-color: #dce8e9;
+ 
+}
+.container
+{
+    width: 50%;
+    height: 500px;
+    background-color: rgb(236, 236, 222);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left:50%;
+    border-radius: 40px;
+    align-items:center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.content
+{
+    background-color: white;
+    width:500px;
+    height: 300px; 
+    align-items:center;
+    display: flex;
+    justify-content: center;   
+    flex-direction: column;
+    padding: 20px 30px;
+}
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align:center;text-decoration: underline;">Quote of the day</h1>
+
+            <div class="content">
+                <p id="Quote" style="font-size:25px;text-align: justify;"></p>
+                <p id="author"></p>
+            </div>
+    </div>
+    
+</body>
+<script>
+    let author=document.getElementById("author");
+
+    fetch("https://type.fit/api/quotes")
+  .then(
+      function(response) {
+    return response.json();
+  })
+  .then(
+      function(data) {
+
+    let value3 = Math.floor(Math.random() * 1386);
+    document.getElementById("Quote").innerHTML=data[value3].text+"<br>";
+    document.getElementById("author").innerHTML="-"+data[value3].author;
+
+  });
+ </script>
+</html>
